@@ -30,6 +30,11 @@ export class ListarComponent implements OnInit {
   excluirEventos(id:number){
     this.eventoService.excluirEventos(id).subscribe(retorno => {
       this.listarEventos();
+      this.eventoService.exibirMensagens(
+        'Excluido no sistema',
+        'Evento excluido com sucesso',
+        'toast-success'
+      );
     });
   }
 }

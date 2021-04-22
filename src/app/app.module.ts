@@ -18,6 +18,10 @@ import { registerLocaleData } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 registerLocaleData(localePt);
 
 
@@ -36,7 +40,9 @@ registerLocaleData(localePt);
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }

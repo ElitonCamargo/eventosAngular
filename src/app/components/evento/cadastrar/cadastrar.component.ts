@@ -25,8 +25,15 @@ export class CadastrarComponent implements OnInit {
   cadastrarEvendo():void{
     this.eventoService.cadastrarEventos(this.evento).subscribe(retorno => {
       this.evento = retorno;
+      this.eventoService.exibirMensagens(
+        'Cadastro no sistema',
+        `${this.evento.nome} foi cadastrado com sucesso. ID: ${this.evento.id}`,
+        'toast-success'
+      );
     });
-    this.router.navigate(["/eventos"]);
+  }
+
+  aoFecharModal(){
     window.location.reload();
   }
 }

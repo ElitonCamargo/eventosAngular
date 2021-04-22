@@ -37,6 +37,11 @@ export class AlterarComponent implements OnInit {
   alterarEvendo():void{
     this.eventoService.alterarEventos(this.evento).subscribe(retorno => {
       this.evento = retorno;
+      this.eventoService.exibirMensagens(
+        'Alterado no sistema',
+        `${this.evento.nome} foi alterado com sucesso. ID: ${this.evento.id}`,
+        'toast-success'
+      );
     });
     this.router.navigate(["/eventos"]);
   }
