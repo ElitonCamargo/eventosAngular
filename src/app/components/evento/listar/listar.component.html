@@ -1,0 +1,44 @@
+<h1 class="my-3 text-primary">
+  Lista de eventos
+</h1>
+
+<div class="car shadow">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="width: 120px;">Img</th>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Local</th>
+        <th>Data</th>
+        <th style="width: 120px;">
+          Ação
+        </th>
+        <th style="width: 34px;">
+          <a class="float-right" data-toggle="modal" data-target="#cadastrarEventos">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of listaDeEvento">
+        <td class="align-middle"><img [src]="evento.img" class="img-fluid"></td>
+        <td class="align-middle">{{evento.id}}</td>
+        <td class="align-middle">{{evento.nome}}</td>
+        <td class="align-middle" title="{{evento.local}}">{{(evento.local.length>25)? (evento.local | slice:0:25)+'...':(evento.local)}}</td>
+        <td class="align-middle">{{evento.data | date:"shortDate"}}</td>
+        <td>
+          <button class="btn btn-warning" routerLink="/eventos/alterar/{{evento.id}}">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-danger ml-2" (click)="excluirEventos([evento.id])">
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-cadastrar></app-cadastrar>
+

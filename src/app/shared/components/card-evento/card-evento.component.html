@@ -1,0 +1,16 @@
+<div class="card">
+  <img class="card-img-top" [src]="imagem">
+  <div class="card-body">
+    <h5 class="card-title">{{nome}}</h5>
+    <p class="card-text">{{local}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Data: {{data | date:"shortDate"}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="https://www.google.com/maps?q={{local}}" target="_blank" class="card-link">
+      <i class="fa fa-map-o" aria-hidden="true"></i>
+      Como chegar
+    </a>
+  </div>
+</div>

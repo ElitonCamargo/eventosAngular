@@ -1,0 +1,60 @@
+<div class="modal fade bd-example-modal-l" id="cadastrarEventos" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cadastrar evento</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="inputNome">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nome"
+              placeholder="Nome do evento"
+              [(ngModel)]="evento.nome"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputNome">Endereço</label>
+            <input
+              type="text"
+              class="form-control"
+              name="local"
+              placeholder="Endereço do evento"
+              [(ngModel)]="evento.local"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputData">Data</label>
+              <input
+              type="date"
+              class="form-control"
+              name="data"
+              [(ngModel)]="evento.data"
+            >
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputImagem">Imagem</label>
+              <input
+              type="text"
+              class="form-control"
+              name="imagem"
+              [(ngModel)]="evento.img"
+            >
+              <img src="{{evento.img}}" class="img-fluid">
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="cadastrarEvendo()">Cadastar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="card p-4 mb-4">
+  <h2>Alterar evento</h2>
+  <div class="form-group">
+    <label for="inputNome">Nome</label>
+    <input type="text" class="form-control" name="nome" placeholder="Nome do evento" [(ngModel)]="evento.nome" />
+  </div>
+  <div class="form-group">
+    <label for="inputNome">Endereço</label>
+    <input type="text" class="form-control" name="local" placeholder="Endereço do evento" [(ngModel)]="evento.local" />
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputData">Data</label>
+      <input type="date" class="form-control" name="data" [(ngModel)]="evento.data">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputImagem">Imagem</label>
+      <input type="text" class="form-control" name="imagem" [(ngModel)]="evento.img">
+      <img src="{{evento.img}}" class="img-fluid">
+    </div>
+  </div>
+  <div class="form-group col-md-12">
+    <button type="button" class="btn btn-primary float-right" (click)="alterarEvendo()">Alterar</button>
+  </div>
+
+</div>
