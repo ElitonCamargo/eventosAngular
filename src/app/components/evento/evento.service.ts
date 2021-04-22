@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { IEvento } from './../../model/IEvento.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,8 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class EventoService {
 
-  //private URL: string = 'http://localhost:3000/eventos';
-  private URL: string = 'https://my-json-server.typicode.com/ElitonCamargo/backend-jsonserver/eventos';
+  private URL: string = environment.URL;
 
   constructor(private http: HttpClient) { }
 
